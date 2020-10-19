@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
                 $_SESSION["idLogin"] = 1;
                 $_SESSION["Username"] = $Username;
                 $_SESSION["loginLevel"] = $loginLevel;
-                header("Location: ../adminHome.php");
+                header("Location: ../Admin/index.php");
             } else if ($loginLevel == 2) {
                 $_SESSION["idLogin"] = $row['idLogin'];
                 $_SESSION["idMahasiswa"] = $row['idMahasiswa'];

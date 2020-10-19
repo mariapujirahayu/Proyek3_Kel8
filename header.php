@@ -72,7 +72,6 @@ session_start();
       <ul class="navbar-nav ml-auto">
           
         <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-        <li class="nav-item active"><a href="Admin/index.php" class="nav-link">Admin</a></li>
        
 
         <?php
