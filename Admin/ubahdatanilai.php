@@ -1,7 +1,7 @@
 <?php include 'koneksi.php' ?>
 
 <?php
-$ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa WHERE id_nilai='$_GET[id]'");
+$ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'");
 $pecah = $ambil->fetch_assoc();
 
 ?>
@@ -74,7 +74,7 @@ $pecah = $ambil->fetch_assoc();
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Nama Mahasiswa</label>
-                        <input type="text" class="form-control" name="nama" required value="<?php echo $pecah['nama_mahasiswa']; ?>">
+                        <input type="text" disabled="" class="form-control" name="nama" required value="<?php echo $pecah['nama']; ?>">
                       </div>
                       <div class="form-group">
                         <label>IPK (a1)</label>
@@ -136,7 +136,7 @@ $pecah = $ambil->fetch_assoc();
                 <!-- database -->
                 <?php
                 if (isset($_POST['ubah'])) {
-                    $koneksi->query("UPDATE nilai_mahasiswa SET nama_mahasiswa='$_POST[nama]', a1='$_POST[a1]', a2='$_POST[a2]', b1='$_POST[b1]', b2='$_POST[b2]', b3='$_POST[b3]', b4='$_POST[b4]', b5='$_POST[b5]', c1='$_POST[c1]', c2='$_POST[c3]', d1='$_POST[d1]', d2='$_POST[d2]', d3='$_POST[d4]' WHERE id_nilai='$_GET[id]'");
+                    $koneksi->query("UPDATE nilai_mahasiswa SET a1='$_POST[a1]', a2='$_POST[a2]', b1='$_POST[b1]', b2='$_POST[b2]', b3='$_POST[b3]', b4='$_POST[b4]', b5='$_POST[b5]', c1='$_POST[c1]', c2='$_POST[c2]', d1='$_POST[d1]', d2='$_POST[d2]', d3='$_POST[d3]' WHERE id_nilai='$_GET[id]'");
                     echo "<script>alert('Data Nilai telah berhasil Diubah!');</script>";
                     echo "<script>location='datanilai.php';</script>";
                 }

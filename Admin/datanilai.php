@@ -102,11 +102,11 @@
                     </thead>
                     <tbody class="text-center">
                         <?php $nomor = 1; ?>
-                        <?php $ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa ORDER BY id_nilai ASC"); ?>
+                        <?php $ambil = $koneksi->query("SELECT * FROM mahasiswa JOIN nilai_mahasiswa ON mahasiswa.id_mahasiswa=nilai_mahasiswa.id_mahasiswa ORDER BY id_nilai ASC"); ?>
                         <?php while ($pecah = $ambil->fetch_assoc()) { ?>
                         <tr>
                             <td><?php echo $nomor; ?></td>
-                            <td><?php echo $pecah['nama_mahasiswa']; ?></td>
+                            <td><?php echo $pecah['nama']; ?></td>
                             <td><?php echo $pecah['a1']; ?></td>
                             <td><?php echo $pecah['a2']; ?></td>
                             <td><?php echo $pecah['b1']; ?></td>
@@ -120,7 +120,7 @@
                             <td><?php echo $pecah['d2']; ?></td>
                             <td><?php echo $pecah['d3']; ?></td>
                             <td><a href="ubahdatanilai.php?id=<?php echo $pecah["id_nilai"] ?>"><button type="submit" class="btn btn-success btn-round"><i class="nc-icon nc-settings"></i></button></a>
-                            <a href="hapusdatanilai.php?id=<?php echo $pecah["id_nilai"] ?>"><button type="submit" class="btn btn-danger btn-round"><i class="nc-icon nc-basket"></i></button></a></td>
+                            <a href="hapusdatamahasiswa.php?id=<?php echo $pecah["id_nilai"] ?>"><button type="submit" class="btn btn-danger btn-round"><i class="nc-icon nc-basket"></i></button></a></td>
                         </tr>
                         <?php $nomor++; ?>
                         <?php } ?>

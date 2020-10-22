@@ -1,3 +1,5 @@
+<?php include 'koneksi.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +13,8 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate pb-5 text-center">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Course Lists <i class="fa fa-chevron-right"></i></span></p>
-					<h1 class="mb-0 bread">Course Lists</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="listpkl.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Daftar Tempat PKL <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Daftar Tempat PKL</h1>
 				</div>
 			</div>
 		</div>
@@ -77,97 +79,22 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="row">
+						<?php $ambil = $koneksi->query("SELECT * FROM instansi ORDER BY id_instansi ASC"); ?>
+        				<?php while ($pecah = $ambil->fetch_assoc()) { ?>
 						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
 							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-1.jpg);">
-									<span class="price">Software</span>
+								<a href="detailinstansi.php?id=<?php echo $pecah["id_instansi"] ?>" class="img" style="background-image: url(foto_instansi/<?php echo $pecah['foto']; ?>);">
+									<span class="price">Tempat PKL</span>
 								</a>
 								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
+									<h3><a href="detailinstansi.php?id=<?php echo $pecah["id_instansi"] ?>"><?php echo $pecah['nama_instansi']; ?></a></h3>
 									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
+										<li><span class="flaticon-shower"></span><?php echo $pecah['alamat']; ?></li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
-							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-2.jpg);">
-									<span class="price">Software</span>
-								</a>
-								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
-									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
-							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-3.jpg);">
-									<span class="price">Software</span>
-								</a>
-								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
-									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
-							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-4.jpg);">
-									<span class="price">Software</span>
-								</a>
-								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
-									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
-							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-5.jpg);">
-									<span class="price">Software</span>
-								</a>
-								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
-									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
-							<div class="project-wrap">
-								<a href="#" class="img" style="background-image: url(images/work-6.jpg);">
-									<span class="price">Software</span>
-								</a>
-								<div class="text p-4">
-									<h3><a href="#">Design for the web with adobe photoshop</a></h3>
-									<p class="advisor">Advisor <span>Tony Garret</span></p>
-									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span>2300</li>
-										<li class="price">$199</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+						<?php } ?>
 					</div>
 					<div class="row mt-5">
 						<div class="col">
