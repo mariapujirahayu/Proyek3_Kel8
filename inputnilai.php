@@ -118,6 +118,7 @@
 									<!-- database -->
 									<?php
 									if (isset($_POST['submit'])) {
+										
 										$id_mahasiswa = $_SESSION["user"]["id_mahasiswa"];
 
 										$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");

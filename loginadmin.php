@@ -49,6 +49,8 @@ include 'koneksi.php';
 											<div class="col-md-12">
 												<div class="form-group">
                                                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Login</button>
+
+													<p class="mb-4">User? <a href="loginuser.php"> Login berikut</a></p>
 												</div>
 											</div>
 										</div>
@@ -57,8 +59,7 @@ include 'koneksi.php';
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
 								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
-									<h3>Halaman Untuk Admin</h3>
-									<p class="mb-4">User? Login berikut</p>
+									<img src="images/LOGOPOLTEK.PNG" width="270px">
 								</div>
 							</div>
 						</div>

@@ -9,25 +9,33 @@
 <?php include 'includes/navbar.php' ?>
 
 <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');">
-  <div class="overlay"></div>
+
+  <div class="overlay">
+    
+  </div>
   <div class="container">
+    <div class="row p-md-8">
+
+
+         <div class="col-md-1"></div>
+         <div class="col-md-9">
+        
+     </div>
+
+   </div>
     <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-      <div class="col-md-7 ftco-animate">
+      <div class="col-md-7"></div>
+      <div class="col-md-5 ftco-animate">
+        <br><br> <br><br>
+        <br><br> <br><br>
+        <br><br> <br><br>
         <span class="subheading">Welcome to Informasi PKL</span>
         <h1 class="mb-4">Sistem Informasi Penentuan Tempat PKL</h1>
         <p class="caps">Input nilai sebelum melakukan perhitungan untuk menentukan tempat PKL</p>
         <p class="mb-0"><a href="listpkl.php" class="btn btn-primary">List PKL</a> <a href="loginuser.php" class="btn btn-white">Login</a></p>
-    </div>
+        <br><br> <br><br>
 </div>
-</div>
-</div>
-
-<section class="ftco-section ftco-no-pb ftco-no-pt">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-7"></div>
-         <div class="col-md-5 order-md-last">
-          <div class="login-wrap p-4 p-md-5">
+       <div class=" login-wrap p-1 p-md-5">
               <h3 class="mb-4">Register Now</h3>
               <form method="post" enctype="multipart/form-data" class="signup-form">
                  <div class="form-group">
@@ -62,10 +70,22 @@
                 }
                 ?>
 
-         <p class="text-center">Already have an account? <a href="loginuser.php">Sign In</a></p>
+         <p class="text-center" style="color: black;">Already have an account? <a href="loginuser.php">Log In</a></p>
 
      </div>
+    </div>
+</div>
+</div>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+   <div class="container">
+      <div class="row">
+        <br><br> <br><br>
+         <div class="col-md-5 order-md-last">
+         
  </div>
+
+         <div class="col-md-3"></div>
 </div>
 </div>
 </section>
@@ -108,7 +128,7 @@
   </a>
 </div>
 <div class="col-md-12 text-center mt-5">
-    <a href="listpkl.php" class="btn btn-secondary">See All Courses</a>
+    <!-- <a href="listpkl.php" class="btn btn-secondary">See All Courses</a> -->
 </div>
 </div>
 </div>
@@ -144,49 +164,7 @@
 </div>
 </section>
 
-<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);">
- <div class="overlay"></div>
- <div class="container">
-    <div class="row">
-       <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-         <div class="block-18 d-flex align-items-center">
-            <div class="icon"><span class="flaticon-online"></span></div>
-            <div class="text">
-             <strong class="number" data-number="400">0</strong>
-             <span>Online Courses</span>
-         </div>
-     </div>
- </div>
- <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-     <div class="block-18 d-flex align-items-center">
-        <div class="icon"><span class="flaticon-graduated"></span></div>
-        <div class="text">
-         <strong class="number" data-number="4500">0</strong>
-         <span>Students Enrolled</span>
-     </div>
- </div>
-</div>
-<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
- <div class="block-18 d-flex align-items-center">
-    <div class="icon"><span class="flaticon-instructor"></span></div>
-    <div class="text">
-     <strong class="number" data-number="1200">0</strong>
-     <span>Experts Instructors</span>
- </div>
-</div>
-</div>
-<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
- <div class="block-18 d-flex align-items-center">
-    <div class="icon"><span class="flaticon-tools"></span></div>
-    <div class="text">
-     <strong class="number" data-number="300">0</strong>
-     <span>Hours Content</span>
- </div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 
 <?php include 'includes/footer.php' ?>
 <?php include 'includes/loader.php' ?>

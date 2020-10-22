@@ -22,15 +22,14 @@
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="./assets/img/logo-small.png">
+            <img src="../images/LOGOPOLTEK.PNG" width="50px">
           </div>
           <!-- <p>CT</p> -->
         </a>
         <a href="index.php" class="simple-text logo-normal">
-          Creative Tim
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+          Penentuan PKL Tim
+          <div class="logo-image-big">
+          </div>
         </a>
       </div>
       <div class="sidebar-wrapper">
