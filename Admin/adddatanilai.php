@@ -33,12 +33,6 @@
             </a>
           </li>
           <li>
-            <a href="./kriteria.php">
-              <i class="nc-icon nc-chart-pie-36"></i>
-              <p>Kriteria</p>
-            </a>
-          </li>
-          <li>
             <a href="./instansi.php">
               <i class="nc-icon nc-chart-pie-36"></i>
               <p>Data Instansi</p>
@@ -51,9 +45,9 @@
             </a>
           </li>
           <li>
-            <a href="./hasil.php">
+            <a href="./logout.php">
               <i class="nc-icon nc-money-coins"></i>
-              <p>Hasil</p>
+              <p>Logout</p>
             </a>
           </li>
         </ul>

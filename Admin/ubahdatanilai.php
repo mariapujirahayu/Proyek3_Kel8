@@ -38,22 +38,22 @@ $pecah = $ambil->fetch_assoc();
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="./kriteria.php">
-              <i class="nc-icon nc-chart-pie-36"></i>
-              <p>Kriteria</p>
+          <li >
+            <a href="./instansi.php">
+              <i class="nc-icon nc-user-run"></i>
+              <p>Data Instansi</p>
             </a>
           </li>
           <li class="active">
             <a href="./datanilai.php">
               <i class="nc-icon nc-user-run"></i>
-              <p>Data Nilai</p>
+              <p>Data Mahasiswa</p>
             </a>
           </li>
           <li>
-            <a href="./hasil.php">
+            <a href="./logout.php">
               <i class="nc-icon nc-money-coins"></i>
-              <p>Hasil</p>
+              <p>Logout</p>
             </a>
           </li>
         </ul>

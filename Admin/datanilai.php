@@ -33,12 +33,6 @@
             </a>
           </li>
           <li>
-            <a href="./kriteria.php">
-              <i class="nc-icon nc-chart-pie-36"></i>
-              <p>Kriteria</p>
-            </a>
-          </li>
-          <li>
             <a href="./instansi.php">
               <i class="nc-icon nc-chart-pie-36"></i>
               <p>Data Instansi</p>
@@ -51,9 +45,9 @@
             </a>
           </li>
           <li>
-            <a href="./hasil.php">
+            <a href="./logout.php">
               <i class="nc-icon nc-money-coins"></i>
-              <p>Hasil</p>
+              <p>Logout</p>
             </a>
           </li>
         </ul>
@@ -76,10 +70,6 @@
                         Kriteria Kepribadian : C <br>
                         Kriteria Bidang Keahlian : D
                     </p>
-                    <div class="update ml-auto mr-auto">
-                        <a href="adddatanilai.php"> <button type="submit" class="btn btn-primary btn-round">Tambah Data Mahasiswa</button></a>
-                        <a href="hitung.php"> <button nama="save" class="btn btn-success btn-round">Hitung Alternatif</button></a>
-                    </div>
                 </div>
                 <div class="table-responsive">
                   <table class="table">

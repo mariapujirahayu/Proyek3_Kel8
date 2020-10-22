@@ -42,12 +42,6 @@
             </a>
           </li>
           <li>
-            <a href="./kriteria.php">
-              <i class="nc-icon nc-chart-pie-36"></i>
-              <p>Kriteria</p>
-            </a>
-          </li>
-          <li>
             <a href="./instansi.php">
               <i class="nc-icon nc-chart-pie-36"></i>
               <p>Data Instansi</p>
@@ -57,12 +51,6 @@
             <a href="./datanilai.php">
               <i class="nc-icon nc-user-run"></i>
               <p>Data Mahasiswa</p>
-            </a>
-          </li>
-          <li>
-            <a href="./hasil.php">
-              <i class="nc-icon nc-money-coins"></i>
-              <p>Hasil</p>
             </a>
           </li>
           <li>

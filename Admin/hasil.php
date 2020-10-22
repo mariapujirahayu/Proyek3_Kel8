@@ -30,10 +30,10 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="./kriteria.php">
+          <li class="">
+            <a href="./instansi.php">
               <i class="nc-icon nc-chart-pie-36"></i>
-              <p>Kriteria</p>
+              <p>Data Instansi</p>
             </a>
           </li>
           <li>
@@ -42,10 +42,10 @@
               <p>Data Nilai Mahasiswa</p>
             </a>
           </li>
-          <li class="active ">
-            <a href="./hasil.php">
+          <li>
+            <a href="./logout.php">
               <i class="nc-icon nc-money-coins"></i>
-              <p>Hasil</p>
+              <p>Logout</p>
             </a>
           </li>
         </ul>
