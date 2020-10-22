@@ -10,7 +10,7 @@ $koneksi = new mysqli("localhost", "root", "", "profilepkl");
    </button>
 
    <div class="collapse navbar-collapse" id="ftco-nav">
-    <?php $ambil = $koneksi->query("SELECT * FROM mahasiswa ORDER BY id_mahasiswa "); ?>
+    <!-- <?php $ambil = $koneksi->query("SELECT * FROM mahasiswa ORDER BY id_mahasiswa "); ?> -->
                         <?php while ($pecah = $ambil->fetch_assoc()) { ?>
        <ul class="navbar-nav ml-auto">
          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
@@ -23,7 +23,7 @@ $koneksi = new mysqli("localhost", "root", "", "profilepkl");
           <li class="nav-item"><a href="Admin/index.php" class="nav-link">Admin</a></li>
         <?php endif ?>
      </ul>
-     <?php } ?>
+     <!-- <?php } ?> -->
  </div>
 </div>
 </nav>

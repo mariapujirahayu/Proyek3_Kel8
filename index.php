@@ -32,9 +32,11 @@
         <span class="subheading">Welcome to Informasi PKL</span>
         <h1 class="mb-4">Sistem Informasi Penentuan Tempat PKL</h1>
         <p class="caps">Input nilai sebelum melakukan perhitungan untuk menentukan tempat PKL</p>
-        <p class="mb-0"><a href="listpkl.php" class="btn btn-primary">List PKL</a> <a href="loginuser.php" class="btn btn-white">Login</a></p>
+        <p class="mb-0"><a href="listpkl.php" class="btn btn-primary">List PKL</a> 
+         <?php if (!isset($_SESSION["user"])) {?>  <a href="loginuser.php" class="btn btn-white">Login</a></p>  <?php }?>
         <br><br> <br><br>
 </div>
+ <?php if (!isset($_SESSION["user"])) {?>
        <div class=" login-wrap p-1 p-md-5">
               <h3 class="mb-4">Register Now</h3>
               <form method="post" enctype="multipart/form-data" class="signup-form">
@@ -73,6 +75,7 @@
          <p class="text-center" style="color: black;">Already have an account? <a href="loginuser.php">Log In</a></p>
 
      </div>
+     <?php }?>
     </div>
 </div>
 </div>
@@ -100,28 +103,28 @@
     </div>
     <div class="row justify-content-center">
      <div class="col-md-3 col-lg-2">
-        <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
+        <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
            <div class="text w-100 text-center">
               <h3>Akademik</h3>
           </div>
       </a>
   </div>
   <div class="col-md-3 col-lg-2">
-    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-9.jpg);">
+    <a class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-9.jpg);">
        <div class="text w-100 text-center">
           <h3>Kemampuan</h3>
       </div>
   </a>
 </div>
 <div class="col-md-3 col-lg-2">
-    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-3.jpg);">
+    <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-3.jpg);">
        <div class="text w-100 text-center">
           <h3>Kepribadian</h3>
       </div>
   </a>
 </div>
 <div class="col-md-3 col-lg-2">
-    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-5.jpg);">
+    <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-5.jpg);">
        <div class="text w-100 text-center">
           <h3>Keahlian</h3>
       </div>

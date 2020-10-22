@@ -29,10 +29,33 @@
 				<div class="col-md-12">
 					<div class="wrapper">
 						<div class="row no-gutters">
+							<!-- database -->
+									<?php
+									if (isset($_POST['submit'])) {
+										
+										$id_mahasiswa = $_SESSION["user"]["id_mahasiswa"];
+
+										$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
+										$pecah = $ambil->fetch_assoc();
+										
+										if($pecah > 1){
+											echo "<div class='alert alert-info'>Anda sudah input nilai</div> ";
+											
+										}
+										else{
+											$koneksi->query("INSERT INTO nilai_mahasiswa(id_mahasiswa, a1, a2, b1, b2, b3, b4, b5, c1, c2,d1,d2,d3) 
+												VALUES('$_GET[id]','$_POST[a1]','$_POST[a2]','$_POST[b1]','$_POST[b2]','$_POST[b3]','$_POST[b4]','$_POST[b5]','$_POST[c1]','$_POST[c2]','$_POST[d1]','$_POST[d2]','$_POST[d3]')");
+											
+											echo "<div class='alert alert-info'>Data Tersimpan</div>";
+											echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
+										}
+									}
+									?>
 							<div class="col-lg-12 col-md-12 order-md-last d-flex align-items-stretch">
+
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-12">Masukkan Nilai</h3>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									<form method="POST" >
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
@@ -108,35 +131,21 @@
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
+													
+  													<input type="checkbox" name="keterangan" value="keterangan" required> Data yang sudah terisi tidak bisa di ubah<br>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
 													<input type="submit" value="Simpan" class="btn btn-primary" name="submit" href="listpkl.php">
 													<div class="submitting"></div>
 												</div>
 											</div>
+
 										</div>
 									</form>
 
-									<!-- database -->
-									<?php
-									if (isset($_POST['submit'])) {
-										
-										$id_mahasiswa = $_SESSION["user"]["id_mahasiswa"];
-
-										$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
-										$pecah = $ambil->fetch_assoc();
-										
-										if($pecah > 0){
-											echo "<div class='alert alert-info'>Anda sudah input nilai</div>";
-											
-										}
-										else{
-											$koneksi->query("INSERT INTO nilai_mahasiswa(id_mahasiswa, a1, a2, b1, b2, b3, b4, b5, c1, c2,d1,d2,d3) 
-												VALUES('$_GET[id]','$_POST[a1]','$_POST[a2]','$_POST[b1]','$_POST[b2]','$_POST[b3]','$_POST[b4]','$_POST[b5]','$_POST[c1]','$_POST[c2]','$_POST[d1]','$_POST[d2]','$_POST[d3]')");
-											
-											echo "<div class='alert alert-info'>Data Tersimpan</div>";
-											echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
-										}
-									}
-									?>
+									
 
 								</div>
 							</div>
@@ -144,9 +153,6 @@
 					</div>
 				</div>
 
-				<div class="col-md-12 mt-5">
-					<div id="map" class="bg-white"></div>
-				</div>
 			</div>
 		</div>
     </section>
