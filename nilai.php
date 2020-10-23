@@ -27,7 +27,10 @@
 </section>
 
         <br><br> 
-<?php $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$_GET[id]' and mahasiswa.id_mahasiswa='$_GET[id]'"); ?>
+          <?php 
+
+                    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+              $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'"); ?>
 
                     <?php while ($pecah = $ambil->fetch_assoc()) { ?>
                       <div class="row justify-content-center pb-4">
@@ -40,7 +43,7 @@
     </div>
 
          <div class="row justify-content-center pb-4">
-        <p><a href="hitung.php?id=<?php echo $pecah["id_nilai"] ?>" class="btn btn-primary">Hitung Profile Matching</a></p>
+        <p><a href="hitung.php" class="btn btn-primary">Hitung Profile Matching</a></p>
                 </div>      
         <br><br> <br><br>           
         <br><br> <br><br>

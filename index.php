@@ -33,10 +33,10 @@
         <h1 class="mb-4">Sistem Informasi Penentuan Tempat PKL</h1>
         <p class="caps">Input nilai sebelum melakukan perhitungan untuk menentukan tempat PKL</p>
         <p class="mb-0"><a href="listpkl.php" class="btn btn-primary">List PKL</a> 
-         <?php if (!isset($_SESSION["user"])) {?>  <a href="loginuser.php" class="btn btn-white">Login</a></p>  <?php }?>
+         <?php if (!isset($_SESSION["id_mahasiswa"])) {?>  <a href="loginuser.php" class="btn btn-white">Login</a></p>  <?php }?>
         <br><br> <br><br>
 </div>
- <?php if (!isset($_SESSION["user"])) {?>
+ <?php if (!isset($_SESSION["id_mahasiswa"])) {?>
        <div class=" login-wrap p-1 p-md-5">
               <h3 class="mb-4">Register Now</h3>
               <form method="post" enctype="multipart/form-data" class="signup-form">
@@ -97,7 +97,7 @@
    <div class="container">
       <div class="row justify-content-center pb-4">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Pilih Tempat PKL</span>
+            <span class="subheading">Pilih Tempat PKL</span>
             <h2 class="mb-4">Kriteria Penilaian Berupa Nilai</h2>
         </div>
     </div>
@@ -141,7 +141,7 @@
    <div class="container">
       <div class="row justify-content-center pb-4">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">List Tempat PKL</span>
+            <span class="subheading">List Tempat PKL</span>
             <h2 class="mb-4">Pilih Tempat PKL</h2>
         </div>
     </div>

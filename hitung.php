@@ -1,9 +1,9 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi.php' ;
 
-<?php
-$ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$_GET[id]' and mahasiswa.id_mahasiswa='$_GET[id]'");
-$pecah = $ambil->fetch_assoc();
-
+  if (isset($_SESSION['user'])) {
+$id_mahasiswa = $_SESSION["id_mahasiswa"];
+$ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'");
+}
 ?>
 
 <!DOCTYPE html>
@@ -102,8 +102,11 @@ $pecah = $ambil->fetch_assoc();
                     <th class="text-center">D3</th>
                 </thead>
                 <tbody class="text-center">
+
                     <?php $nomor = 1; ?>
-                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa WHERE id_mahasiswa='$_GET[id]' ORDER BY id_instansi ASC"); 
+                    <?php
+                    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+                     $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa WHERE id_mahasiswa='$id_mahasiswa' ORDER BY id_instansi ASC"); 
                         $gapa1 = 0;
                         $gapa2 = 0;
                         $gapb1 = 0;
@@ -175,7 +178,10 @@ $pecah = $ambil->fetch_assoc();
                 </thead>
                 <tbody class="text-center">
                     <?php $nomor = 1; ?>
-                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa  WHERE id_mahasiswa='$_GET[id]' ORDER BY id_instansi ASC"); 
+                    <?php 
+
+                    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+                    $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa  WHERE id_mahasiswa='$id_mahasiswa' ORDER BY id_instansi ASC"); 
                       $gapa1 = 0;
                       $gapa2 = 0;
                       $gapb1 = 0;
@@ -623,7 +629,7 @@ $pecah = $ambil->fetch_assoc();
                 </thead>
                 <tbody class="text-center">
                     <?php $nomor = 1; ?>
-                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa WHERE id_mahasiswa='$_GET[id]' ORDER BY id_instansi ASC"); 
+                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa WHERE id_mahasiswa='$id_mahasiswa' ORDER BY id_instansi ASC"); 
                       $gapa1 = 0;
                       $gapa2 = 0;
                       $gapb1 = 0;
@@ -1078,7 +1084,7 @@ $pecah = $ambil->fetch_assoc();
                 </thead>
                 <tbody class="text-center">
                     <?php $nomor = 1; ?>
-                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa  WHERE id_mahasiswa='$_GET[id]' ORDER BY id_instansi ASC"); 
+                    <?php $ambil = $koneksi->query("SELECT * FROM instansi, nilai_mahasiswa  WHERE id_mahasiswa='$id_mahasiswa' ORDER BY id_instansi ASC"); 
                       $gapa1 = 0;
                       $gapa2 = 0;
                       $gapb1 = 0;

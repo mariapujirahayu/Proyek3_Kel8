@@ -1,14 +1,12 @@
 <?php
-include 'koneksi.php';
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<?php include 'includes/header.php' ?>
-</head>
-<body>
-<?php include 'includes/navbar.php' ?>
+ include 'includes/header.php'; 
+ include 'includes/navbar.php'; 
+if (isset($_GET['pesan'])) {
+        $mess="<p>{$_GET['pesan']}</p>";
+    }else{
+        $mess = "";
+    }
+ ?>
 
 	
 	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
@@ -32,7 +30,7 @@ include 'koneksi.php';
 							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4 text-center">Halaman Login User</h3>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									<form method="POST" action="loginuserProcess.php" id="contactForm" name="contactForm" class="contactForm">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
@@ -50,6 +48,8 @@ include 'koneksi.php';
 												<div class="form-group">
                                                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Login</button>
 													<p class="mb-4">Admin? <a href="loginadmin.php"> Login berikut</a></p>
+
+              <?php echo $mess;?>
 												</div>
 											</div>
 										</div>
@@ -66,21 +66,8 @@ include 'koneksi.php';
 				</div>
 			</div>
 		</div>
-    </section>
-    <?php
-  if (isset($_POST['login'])) {
-    $ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE username='$_POST[username]' AND pass = '$_POST[pass]'");
-    $sama = $ambil->num_rows;
-    if ($sama == 1) {
-      $_SESSION['user'] = $ambil->fetch_assoc();
-      echo "<div class='alert alert-info'>Login Sukses</div>";
-      echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
-    } else {
-      echo "<div class='alert alert-danger'>Login Gagal</div>";
-      echo "<meta http-equiv='refresh' content='1;url=loginuser.php'>";
-    }
-  }
-  ?>
+    </section> 
+   
 
     <?php include 'includes/footer.php' ?>
     <?php include 'includes/loader.php' ?>
