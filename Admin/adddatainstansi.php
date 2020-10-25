@@ -13,12 +13,13 @@
     <div class="logo">
         <a href="https://github.com/mariapujirahayu" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="./assets/img/cover.jpg">
+            <img src="../images/LOGOPOLTEK.PNG" width="50px">
           </div>
           <!-- <p>CT</p> -->
         </a>
+        
         <a href="index.php" class="simple-text logo-normal">
-          PKL
+          Penentuan PKL Tim
           <!-- <div class="logo-image-big">
             <img src="./assets/img/oke.png">
           </div> -->

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include 'koneksi2.php';
 ?>
 
@@ -9,6 +10,16 @@ include 'koneksi2.php';
 </head>
 <body>
 <?php include 'includes/navbar.php' ?>
+=======
+ include 'includes/header.php'; 
+ include 'includes/navbar.php'; 
+if (isset($_GET['pesan'])) {
+        $mess="<p>{$_GET['pesan']}</p>";
+    }else{
+        $mess = "";
+    }
+ ?>
+>>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 
 	
 	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
@@ -32,7 +43,7 @@ include 'koneksi2.php';
 							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4 text-center">Halaman Login User</h3>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									<form method="POST" action="loginuserProcess.php" id="contactForm" name="contactForm" class="contactForm">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
@@ -49,6 +60,9 @@ include 'koneksi2.php';
 											<div class="col-md-12">
 												<div class="form-group">
                                                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Login</button>
+													<p class="mb-4">Admin? <a href="loginadmin.php"> Login berikut</a></p>
+
+              <?php echo $mess;?>
 												</div>
 											</div>
 										</div>
@@ -57,8 +71,7 @@ include 'koneksi2.php';
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
 								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
-									<h3>Halaman Untuk User</h3>
-									<p class="mb-4">Admin? Login berikut</p>
+									<img src="images/LOGOPOLTEK.PNG" width="270px">
 								</div>
 							</div>
 						</div>
@@ -66,6 +79,7 @@ include 'koneksi2.php';
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
     </section>
     <?php
   if (isset($_POST['login'])) {
@@ -81,6 +95,10 @@ include 'koneksi2.php';
     }
   }
   ?>
+=======
+    </section> 
+   
+>>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 
     <?php include 'includes/footer.php' ?>
     <?php include 'includes/loader.php' ?>

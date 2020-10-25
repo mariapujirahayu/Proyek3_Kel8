@@ -1,8 +1,8 @@
 <?php include 'koneksi2.php' ?>
 
 <?php
-$ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'");
-$pecah = $ambil->fetch_assoc();
+// $ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'");
+// $pecah = $ambil->fetch_assoc();
 
 ?>
 
@@ -26,49 +26,118 @@ $pecah = $ambil->fetch_assoc();
  </div>
 </section>
 
+        <br><br> 
+          <?php 
 
+                    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+              $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'"); ?>
 
-<section class="ftco-section ftco-about img">
-    <div class="container">
-        <div class="row d-flex">
-            <div class="col-md-12 about-intro">
-                <div class="row">
-                    <?php $ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'"); ?>
                     <?php while ($pecah = $ambil->fetch_assoc()) { ?>
-                    <div class="col-md-12 pl-md-5 py-5">
-                        <div class="d-flex about-wrap">
-                            <div class="row justify-content-start pb-3">
-                                <div class="col-md-12 heading-section ftco-animate">
-                                    <h2 class="mb-4">Nilai Mahasiswa</h2>
-                                    <p>Nama Mahasiswa : <?php echo $pecah['nama']; ?></p>
-                                    <span class="subheading">Kriteria Akademik</span>
-                                    <p>IPK : <?php echo $pecah['a1']; ?></p>
-                                    <p>Kemampuan Dasar : <?php echo $pecah['a2']; ?></p>
-                                    <span class="subheading">Uji Kriteria Kemampuan</span>
-                                    <p>Database : <?php echo $pecah['b1']; ?></p>
-                                    <p>Web : <?php echo $pecah['b2']; ?></p>
-                                    <p>Pemrograman Mobile : <?php echo $pecah['b3']; ?></p>
-                                    <p>Jaringan : <?php echo $pecah['b4']; ?></p>
-                                    <p>Desain  : <?php echo $pecah['b5']; ?></p>
-                                    <span class="subheading">Kriteria Kepribadian</span>
-                                    <p>Keaktifan : <?php echo $pecah['c1']; ?></p>
-                                    <p>Kedisplinan : <?php echo $pecah['c2']; ?></p>
-                                    <span class="subheading">Bidang Keahlian</span>
-                                    <p>Pemrograman  : <?php echo $pecah['d1']; ?></p>
-                                    <p>Jaringan : <?php echo $pecah['d2']; ?></p>
-                                    <p>Desain : <?php echo $pecah['d3']; ?></p>
-                                    <p><a href="hitung.php?id=<?php echo $pecah["id_nilai"] ?>" class="btn btn-primary">Hitung Profile Matching</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                </div>
-            </div>
+                      <div class="row justify-content-center pb-4">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <span class="subheading"></span>
+            <h2 class="mb-4">Nilai Mahasiswa</h2>
+            <h3 class="mb-4">(<?php echo $pecah['nama']; ?>)</h3>
+      
         </div>
     </div>
+<<<<<<< HEAD
 </section>
 
+=======
+
+         <div class="row justify-content-center pb-4">
+        <p><a href="hitung.php" class="btn btn-primary">Hitung Profile Matching</a></p>
+                </div>      
+        <br><br> <br><br>           
+        <br><br> <br><br>
+        <br><br> <br><br>  
+        <br><br> <br><br>
+<section class="ftco-section">
+   <div class="container">
+    
+    <div class="row justify-content-center ">
+
+       <div class=" login-wrap p-1 p-md-10 ">
+          <div class="col-md-2 col-lg-2">
+                <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
+                   <div class="text w-100 text-center">
+                      <h3>Akademik</h3>
+                  </div>
+              </a>
+          </div>
+          <div class="col-md-10 ">
+            <br>
+            <center>
+             <p> IPK : <?php echo $pecah['a1']; ?></p>
+              <p> Kemampuan Dasar : <?php echo $pecah['a2']; ?></p></center>
+          </div>
+    </div>
+    <div class=" login-wrap p-1 p-md-10 ">
+         
+    </div>
+       <div class="login-wrap p-1 p-md-6">
+      <div class="col-md-1 col-lg-2">
+        <a class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-9.jpg);">
+           <div class="text w-100 text-center">
+              <h3>Kemampuan</h3>
+          </div>
+      </a>
+    </div> 
+    <div class="col-md-11 "><center>
+          <p>Database : <?php echo $pecah['b1']; ?></p>
+          <p>Web : <?php echo $pecah['b2']; ?></p>
+          <p>Mobile : <?php echo $pecah['b3']; ?></p>
+          <p>Jaringan : <?php echo $pecah['b4']; ?></p>
+          <p>Desain  : <?php echo $pecah['b5']; ?></p></center>
+      </div>
+   </div>
+   <div class=" login-wrap p-1 p-md-10 ">
+         
+    </div>
+    <div class=" login-wrap p-1 p-md-6">
+        <div class="col-md-1 col-lg-2">
+            <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-3.jpg);">
+               <div class="text w-100 text-center">
+                  <h3>Kepribadian</h3>
+              </div>
+          </a>
+        </div>
+         <div class="col-md-11 "><br><br><center>
+             <p>Keaktifan : <?php echo $pecah['c1']; ?></p>
+             <p>Kedisplinan : <?php echo $pecah['c2']; ?></p></center>
+          </div>
+  </div>
+   <div class=" login-wrap p-1 p-md-10 ">
+         
+    </div>
+       <div class=" login-wrap p-1 p-md-6">
+          <div class="col-md-1 col-lg-2">
+              <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-5.jpg);">
+                 <div class="text w-100 text-center">
+                    <h3>Keahlian</h3>
+                </div>
+            </a>
+          </div>
+           <div class="col-md-11 "><br><center>
+               <p>Pemrograman  : <?php echo $pecah['d1']; ?></p>
+                <p>Jaringan : <?php echo $pecah['d2']; ?></p>
+                <p>Desain : <?php echo $pecah['d3']; ?></p></center>
+            </div>
+        </div>
+  </div>
+                    <?php } ?>
+<div class="col-md-12 text-center mt-5">
+    <!-- <a href="listpkl.php" class="btn btn-secondary">See All Courses</a> -->
+</div>
+</div>
+</section>
+
+
+
+
+
+>>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 <?php include 'includes/footer.php' ?>
 <?php include 'includes/loader.php' ?>
 
