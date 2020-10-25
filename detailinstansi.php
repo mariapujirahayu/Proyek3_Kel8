@@ -1,4 +1,4 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi2.php' ?>
 
 <?php
 $ambil = $koneksi->query("SELECT * FROM instansi WHERE id_instansi='$_GET[id]'");

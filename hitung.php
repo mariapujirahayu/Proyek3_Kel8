@@ -1,4 +1,4 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi2.php' ?>
 
 <?php
 $ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'");

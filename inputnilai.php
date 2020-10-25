@@ -1,7 +1,10 @@
-<?php include 'koneksi.php' 
+<?php include 'koneksi.php' ?>
+<!-- 
+<?php
+$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
+$pecah = $ambil->fetch_assoc();
 
-
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +121,7 @@
 									<!-- database -->
 									<?php
 									if (isset($_POST['submit'])) {
-										$id_mahasiswa = $_SESSION["user"]["id_mahasiswa"];
+										$id_mahasiswa = $_SESSION["mahasiswa"]["id_mahasiswa"];
 
 										$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
 										$pecah = $ambil->fetch_assoc();

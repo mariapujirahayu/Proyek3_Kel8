@@ -1,4 +1,4 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi2.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@
   </a>
 </div>
 <div class="col-md-12 text-center mt-5">
-    <a href="listpkl.php" class="btn btn-secondary">See All Courses</a>
+    <a href="listpkl.php" class="btn btn-secondary">Lihat Semua Tempat PKL</a>
 </div>
 </div>
 </div>

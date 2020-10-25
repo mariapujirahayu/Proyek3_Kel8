@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include 'koneksi2.php';
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ include 'koneksi.php';
     $ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE username='$_POST[username]' AND pass = '$_POST[pass]'");
     $sama = $ambil->num_rows;
     if ($sama == 1) {
-      $_SESSION['user'] = $ambil->fetch_assoc();
+      $_SESSION['mahasiswa'] = $ambil->fetch_assoc();
       echo "<div class='alert alert-info'>Login Sukses</div>";
       echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
     } else {

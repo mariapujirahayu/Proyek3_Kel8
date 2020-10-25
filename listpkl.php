@@ -20,6 +20,7 @@
 		</div>
 	</section>
 
+
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
@@ -78,8 +79,15 @@
 					</div>
 				</div>
 				<div class="col-lg-9">
+					<!-- <div class="col-md-12 text-center">
+						<?php $ambil = $koneksi->query("SELECT * FROM mahasiswa"); ?>
+						<?php while ($pecah = $ambil->fetch_assoc()) { ?>
+						<a href="inputnilai.php?id=<?php echo $pecah["id_mahasiswa"] ?>" class="btn btn-secondary">Input Nilai</a><?php } ?>
+						<a href="nilai.php?id=<?php echo $pecah["id_mahasiswa"] ?>" class="btn btn-secondary">Lihat Nilai</a>
+						
+					</div><br> -->
 					<div class="row">
-						<?php $ambil = $koneksi->query("SELECT * FROM instansi ORDER BY id_instansi ASC"); ?>
+						<?php $ambil = $koneksi->query("SELECT * FROM instansi,mahasiswa ORDER BY id_instansi ASC"); ?>
         				<?php while ($pecah = $ambil->fetch_assoc()) { ?>
 						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
 							<div class="project-wrap">

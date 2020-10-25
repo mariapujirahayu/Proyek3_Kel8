@@ -1,13 +1,4 @@
-<?php include 'koneksi1.php'
-
-// $ambil = "SELECT * FROM data_alternatif";
-// $pecah = $ambil->fetch_assoc();
-
-// // $sql = "SELECT * FROM data_alternatif";
-// // $connStatus = $koneksi->query($sql);
-// $alternatif = mysqli_num_rows($pecah);
-
-?>
+<?php include 'koneksi1.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
