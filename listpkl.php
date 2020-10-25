@@ -1,4 +1,4 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi2.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,38 +20,35 @@
 		</div>
 	</section>
 
-
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
-			
-					
-
-<<<<<<< HEAD
-					<div class="sidebar-box bg-white p-4 ftco-animate">
-						<h3 class="heading-sidebar">Software</h3>
-						<form action="#" class="browse-form">
-							<label for="option-software-1"><input type="checkbox" id="option-software-1" name="vehicle" value="" checked> Adobe Photoshop</label><br>
-							<label for="option-software-2"><input type="checkbox" id="option-software-2" name="vehicle" value=""> Adobe Illustrator</label><br>
-							<label for="option-software-3"><input type="checkbox" id="option-software-3" name="vehicle" value=""> Sketch</label><br>
-							<label for="option-software-4"><input type="checkbox" id="option-software-4" name="vehicle" value=""> WordPress</label><br>
-							<label for="option-software-5"><input type="checkbox" id="option-software-5" name="vehicle" value=""> HTML &amp; CSS</label><br>
+				<div class="col-lg-3 sidebar">
+					<div class="sidebar-box bg-white ftco-animate">
+						<form action="#" class="search-form">
+							<div class="form-group">
+								<span class="icon fa fa-search"></span>
+								<input type="text" class="form-control" placeholder="Search...">
+							</div>
 						</form>
 					</div>
+
+					<!-- <div class="sidebar-box bg-white p-4 ftco-animate">
+						<h3 class="heading-sidebar">Course Category</h3>
+						<form action="#" class="browse-form">
+							<label for="option-category-1"><input type="checkbox" id="option-category-1" name="vehicle" value="" checked> Design &amp; Illustration</label><br>
+							<label for="option-category-2"><input type="checkbox" id="option-category-2" name="vehicle" value=""> Web Development</label><br>
+							<label for="option-category-3"><input type="checkbox" id="option-category-3" name="vehicle" value=""> Programming</label><br>
+							<label for="option-category-4"><input type="checkbox" id="option-category-4" name="vehicle" value=""> Music &amp; Entertainment</label><br>
+							<label for="option-category-5"><input type="checkbox" id="option-category-5" name="vehicle" value=""> Photography</label><br>
+							<label for="option-category-6"><input type="checkbox" id="option-category-6" name="vehicle" value=""> Health &amp; Fitness</label><br>
+						</form>
+					</div> -->
 				</div>
+
 				<div class="col-lg-9">
-					<!-- <div class="col-md-12 text-center">
-						<?php $ambil = $koneksi->query("SELECT * FROM mahasiswa"); ?>
-						<?php while ($pecah = $ambil->fetch_assoc()) { ?>
-						<a href="inputnilai.php?id=<?php echo $pecah["id_mahasiswa"] ?>" class="btn btn-secondary">Input Nilai</a><?php } ?>
-						<a href="nilai.php?id=<?php echo $pecah["id_mahasiswa"] ?>" class="btn btn-secondary">Lihat Nilai</a>
-						
-					</div><br> -->
-=======
-				<div class="col-lg-12">
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 					<div class="row">
-						<?php $ambil = $koneksi->query("SELECT * FROM instansi,mahasiswa ORDER BY id_instansi ASC"); ?>
+						<?php $ambil = $koneksi->query("SELECT * FROM instansi ORDER BY id_instansi ASC"); ?>
         				<?php while ($pecah = $ambil->fetch_assoc()) { ?>
 						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
 							<div class="project-wrap">
@@ -68,26 +65,12 @@
 						</div>
 						<?php } ?>
 					</div>
-					<!-- <div class="row mt-5">
-						<div class="col">
-							<div class="block-27">
-								<ul>
-									<li><a href="#">&lt;</a></li>
-									<li class="active"><span>1</span></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">&gt;</a></li>
-								</ul>
-							</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
-		</section>
-        <?php include 'includes/footer.php' ?>
-        <?php include 'includes/loader.php' ?>
+		</div>
+	</section>
+	<?php include 'includes/footer.php' ?>
+	<?php include 'includes/loader.php' ?>
 			
-		</body>
-		</html>
+</body>
+</html>

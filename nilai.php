@@ -41,10 +41,6 @@
       
         </div>
     </div>
-<<<<<<< HEAD
-</section>
-
-=======
 
          <div class="row justify-content-center pb-4">
         <p><a href="hitung.php" class="btn btn-primary">Hitung Profile Matching</a></p>
@@ -137,7 +133,6 @@
 
 
 
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 <?php include 'includes/footer.php' ?>
 <?php include 'includes/loader.php' ?>
 

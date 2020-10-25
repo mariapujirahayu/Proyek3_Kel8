@@ -1,4 +1,4 @@
-<?php include 'koneksi.php' ?>
+<?php include 'koneksi2.php' ?>
 <!-- 
 <?php
 $ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
@@ -148,33 +148,6 @@ $pecah = $ambil->fetch_assoc();
 
 										</div>
 									</form>
-
-<<<<<<< HEAD
-									<!-- database -->
-									<?php
-									if (isset($_POST['submit'])) {
-										$id_mahasiswa = $_SESSION["mahasiswa"]["id_mahasiswa"];
-
-										$ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE id_mahasiswa='$_GET[id]'");
-										$pecah = $ambil->fetch_assoc();
-										
-										if($pecah > 0){
-											echo "<div class='alert alert-info'>Anda sudah input nilai</div>";
-											
-										}
-										else{
-											$koneksi->query("INSERT INTO nilai_mahasiswa(id_mahasiswa, a1, a2, b1, b2, b3, b4, b5, c1, c2,d1,d2,d3) 
-												VALUES('$_GET[id]','$_POST[a1]','$_POST[a2]','$_POST[b1]','$_POST[b2]','$_POST[b3]','$_POST[b4]','$_POST[b5]','$_POST[c1]','$_POST[c2]','$_POST[d1]','$_POST[d2]','$_POST[d3]')");
-											
-											echo "<div class='alert alert-info'>Data Tersimpan</div>";
-											echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
-										}
-									}
-									?>
-=======
-									
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
-
 								</div>
 							</div>
 						</div>

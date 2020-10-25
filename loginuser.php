@@ -1,16 +1,4 @@
 <?php
-<<<<<<< HEAD
-include 'koneksi2.php';
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<?php include 'includes/header.php' ?>
-</head>
-<body>
-<?php include 'includes/navbar.php' ?>
-=======
  include 'includes/header.php'; 
  include 'includes/navbar.php'; 
 if (isset($_GET['pesan'])) {
@@ -19,7 +7,6 @@ if (isset($_GET['pesan'])) {
         $mess = "";
     }
  ?>
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 
 	
 	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
@@ -79,26 +66,8 @@ if (isset($_GET['pesan'])) {
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
-    </section>
-    <?php
-  if (isset($_POST['login'])) {
-    $ambil = $koneksi->query("SELECT * FROM mahasiswa WHERE username='$_POST[username]' AND pass = '$_POST[pass]'");
-    $sama = $ambil->num_rows;
-    if ($sama == 1) {
-      $_SESSION['mahasiswa'] = $ambil->fetch_assoc();
-      echo "<div class='alert alert-info'>Login Sukses</div>";
-      echo "<meta http-equiv='refresh' content='1;url=listpkl.php'>";
-    } else {
-      echo "<div class='alert alert-danger'>Login Gagal</div>";
-      echo "<meta http-equiv='refresh' content='1;url=loginuser.php'>";
-    }
-  }
-  ?>
-=======
     </section> 
    
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
 
     <?php include 'includes/footer.php' ?>
     <?php include 'includes/loader.php' ?>

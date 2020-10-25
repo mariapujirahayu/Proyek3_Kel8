@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<?php include 'koneksi2.php' ?>
-
-<?php
-$ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa JOIN mahasiswa ON nilai_mahasiswa.id_mahasiswa = mahasiswa.id_mahasiswa WHERE id_nilai='$_GET[id]'");
-$pecah = $ambil->fetch_assoc();
-=======
-<?php include 'koneksi.php' ;
->>>>>>> f30dbc62454fb955cc70e473154bcadbe56b9899
+<?php include 'koneksi2.php' ;
 
   if (isset($_SESSION['user'])) {
 $id_mahasiswa = $_SESSION["id_mahasiswa"];
@@ -1532,7 +1524,6 @@ $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_ma
                     </tr>
                     <?php $nomor++; ?>
                     <?php } ?>
-                    
                 </tbody>
             </table>
         </div>
