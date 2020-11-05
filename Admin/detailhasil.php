@@ -73,26 +73,22 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
-                      <th class="text-center">No</th>
-                      <th class="text-center">Tanggal Perhitungan</th>
+                      <th class="text-center">Ranking</th>
                       <th class="text-center">Nama Mahasiswa</th>
-                      <th class="text-center">Aksi</th>
+                      <th class="text-center">Instansi</th>
+                      <th class="text-center">Nilai</th>
                     </thead>
-                    <tbody class="text-center">
-                        <?php $nomor = 1; ?>
-                        <?php $ambil = $koneksi->query("SELECT * FROM mahasiswa JOIN hasilhitung ON mahasiswa.id_mahasiswa=hasilhitung.id_mahasiswa GROUP BY tanggal"); ?>
-                        <?php while ($pecah = $ambil->fetch_assoc()) { ?>
-                        <tr>
-                            <td><?php echo $nomor; ?></td>
-                            <td><?php echo $pecah['tanggal']; ?></td>
-                            <td><?php echo $pecah['nama']; ?></td>
-                            <td>
-                              <a href="detailhasil.php?tanggal=<?php echo $pecah["tanggal"] ?>"><button type="submit" class="btn btn-success btn-round"><i class="nc-icon nc-paper"></i></button></a>
-                              <a href="hapushasilhitung.php?tanggal=<?php echo $pecah["tanggal"] ?>"><button type="submit" class="btn btn-danger btn-round"><i class="nc-icon nc-basket"></i></button></a>
-                            </td>
-                        </tr>
-                        <?php $nomor++; ?>
-                        <?php } ?>
+                    <tbody>
+                      <?php $nomor = 1; ?>
+                      <?php $ambil = $koneksi->query("SELECT * FROM mahasiswa JOIN hasilhitung ON mahasiswa.id_mahasiswa=hasilhitung.id_mahasiswa WHERE tanggal = '$_GET[tanggal]' ORDER BY hasil DESC"); ?>
+                      <?php while ($pecah = $ambil->fetch_assoc()) { ?>
+                      <tr>
+                        <td class="text-center"><?php echo $nomor; ?></td>
+                        <td class="text-center"><?php echo $pecah['nama']; ?></td>
+                        <td class="text-center"><?php echo $pecah['nama_instansi']; ?></td>
+                        <td class="text-center"><?php echo $pecah['hasil']; ?></td>
+                      <?php $nomor++; ?>
+                      <?php } ?>
                     </tbody>
                   </table>
                 </div>

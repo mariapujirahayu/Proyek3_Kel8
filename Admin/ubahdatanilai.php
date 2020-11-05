@@ -52,8 +52,14 @@ $pecah = $ambil->fetch_assoc();
             </a>
           </li>
           <li>
+            <a href="./hasil.php">
+              <i class="nc-icon nc-box"></i>
+              <p>Riwayat Perhitungan</p>
+            </a>
+          </li>
+          <li class="active-pro">
             <a href="./logout.php">
-              <i class="nc-icon nc-money-coins"></i>
+              <i class="nc-icon nc-button-power"></i>
               <p>Logout</p>
             </a>
           </li>

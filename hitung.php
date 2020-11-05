@@ -1,9 +1,9 @@
 <?php include 'koneksi2.php' ;
 
   if (isset($_SESSION['user'])) {
-$id_mahasiswa = $_SESSION["id_mahasiswa"];
-$ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'");
-}
+    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+    $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -622,7 +622,7 @@ $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_ma
                 <thead class=" text-primary">
                     <th class="text-center">Nomor</th>
                     <th class="text-center">Instansi</th>
-                    <th class="text-center">Hasil Akhir</th>
+                    <th class="text-center">N Kriteria Akademik</th>
                     <th class="text-center">N Kriteria Kemampuan</th>
                     <th class="text-center">N Kriteria Kepribadian</th>
                     <th class="text-center">N Kriteria Keahlian</th>
@@ -1070,6 +1070,15 @@ $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_ma
                     <?php $nomor++; ?>
                     <?php } ?>
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="2" class="text-center">Persentase Penilaian</th>
+                    <th class="text-center">30%</th>
+                    <th class="text-center">20%</th>
+                    <th class="text-center">20%</th>
+                    <th class="text-center">30%</th>
+                  </tr>
+                </tfoot>
             </table>
         </div>
     </div>
@@ -1516,6 +1525,12 @@ $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_ma
                       $n4 = ($cf4*0.6)+($sf4*0.4);
                       //ranking
                       $rank = ($n1*0.3)+($n2*0.2)+($n3*0.2)+($n4*0.3);
+                      $nama_instansi = $pecah['nama_instansi'];
+
+                      date_default_timezone_set('Asia/Jakarta');
+                      $tanggal = date("Y-m-d h:i");
+                      $koneksi->query("INSERT INTO hasilhitung(id_mahasiswa, nama_instansi,hasil,tanggal) 
+                        VALUES('$id_mahasiswa','$nama_instansi','$rank','$tanggal')");
                     ?>
                     <tr>
                         <td><?php echo $nomor; ?></td>

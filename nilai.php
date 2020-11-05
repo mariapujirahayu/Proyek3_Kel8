@@ -25,35 +25,30 @@
    </div>
  </div>
 </section>
+<br><br> 
+  <?php 
+    $id_mahasiswa = $_SESSION["id_mahasiswa"];
+    $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'"); 
+  ?>
+  <?php while ($pecah = $ambil->fetch_assoc()) { ?>
 
-        <br><br> 
-          <?php 
-
-                    $id_mahasiswa = $_SESSION["id_mahasiswa"];
-              $ambil = $koneksi->query("SELECT * from nilai_mahasiswa,mahasiswa WHERE nilai_mahasiswa.id_mahasiswa='$id_mahasiswa' and mahasiswa.id_mahasiswa='$id_mahasiswa'"); ?>
-
-                    <?php while ($pecah = $ambil->fetch_assoc()) { ?>
-                      <div class="row justify-content-center pb-4">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <span class="subheading"></span>
-            <h2 class="mb-4">Nilai Mahasiswa</h2>
-            <h3 class="mb-4">(<?php echo $pecah['nama']; ?>)</h3>
-      
-        </div>
-    </div>
-
-         <div class="row justify-content-center pb-4">
-        <p><a href="hitung.php" class="btn btn-primary">Hitung Profile Matching</a></p>
-                </div>      
-        <br><br> <br><br>           
-        <br><br> <br><br>
-        <br><br> <br><br>  
-        <br><br> <br><br>
+<div class="row justify-content-center pb-4">
+  <div class="col-md-12 heading-section text-center ftco-animate">
+    <span class="subheading"></span>
+    <h2 class="mb-4">Nilai Mahasiswa</h2>
+    <h3 class="mb-4">(<?php echo $pecah['nama']; ?>)</h3>
+  </div>
+</div>
+<div class="row justify-content-center pb-4">
+  <p><a href="hitung.php" nama="save" class="btn btn-primary">Hitung Profile Matching</a></p>
+</div>      
+<br><br> <br><br>           
+<br><br> <br><br>
+<br><br> <br><br>  
+<br><br> <br><br>
 <section class="ftco-section">
    <div class="container">
-    
     <div class="row justify-content-center ">
-
        <div class=" login-wrap p-1 p-md-10 ">
           <div class="col-md-2 col-lg-2">
                 <a  class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
@@ -65,14 +60,14 @@
           <div class="col-md-10 ">
             <br>
             <center>
-             <p> IPK : <?php echo $pecah['a1']; ?></p>
-              <p> Kemampuan Dasar : <?php echo $pecah['a2']; ?></p></center>
+              <p> IPK : <?php echo $pecah['a1']; ?></p>
+              <p> Kemampuan Dasar : <?php echo $pecah['a2']; ?></p>
+            </center>
           </div>
-    </div>
+        </div>
     <div class=" login-wrap p-1 p-md-10 ">
-         
     </div>
-       <div class="login-wrap p-1 p-md-6">
+    <div class="login-wrap p-1 p-md-6">
       <div class="col-md-1 col-lg-2">
         <a class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(images/work-9.jpg);">
            <div class="text w-100 text-center">
@@ -121,17 +116,30 @@
                 <p>Desain : <?php echo $pecah['d3']; ?></p></center>
             </div>
         </div>
-  </div>
-                    <?php } ?>
-<div class="col-md-12 text-center mt-5">
+      </div>
+    <?php } ?>
+    <div class="col-md-12 text-center mt-5">
     <!-- <a href="listpkl.php" class="btn btn-secondary">See All Courses</a> -->
-</div>
+    </div>
+
+    <?php
+      if(isset($_POST['save'])){
+          date_default_timezone_set('Asia/Jakarta');
+          $tanggal = date("Y-m-d h:i");
+          
+          $ambil = $koneksi->query("SELECT * FROM nilai_mahasiswa");
+          $pecah = $ambil->fetch_assoc();
+
+          $koneksi->query("INSERT INTO hasilhitung(id_mahasiswa,nama, nama_instansi,hasil,tanggal) 
+            VALUES('$id_mahasiswa','$nama','$nama_instansi','$rank','$tanggal')");
+
+          echo "<div class='alert alert-info'>Data Tersimpan</div>";
+          echo "<meta http-equiv='refresh' content='1;url=index.php'>";
+      }
+    ?>
+
 </div>
 </section>
-
-
-
-
 
 <?php include 'includes/footer.php' ?>
 <?php include 'includes/loader.php' ?>
