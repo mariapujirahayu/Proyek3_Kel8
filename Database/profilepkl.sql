@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 10:03 AM
+-- Generation Time: Nov 06, 2020 at 01:44 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -40,6 +40,35 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hasilhitung`
+--
+
+CREATE TABLE `hasilhitung` (
+  `id_hasil` int(11) NOT NULL,
+  `id_mahasiswa` int(11) NOT NULL,
+  `nama_instansi` varchar(100) NOT NULL,
+  `hasil` double NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hasilhitung`
+--
+
+INSERT INTO `hasilhitung` (`id_hasil`, `id_mahasiswa`, `nama_instansi`, `hasil`, `tanggal`) VALUES
+(4, 2, 'Cahaya Matahari', 4.34, '2020-11-02 20:38:00'),
+(5, 2, 'Harapan', 4.415, '2020-11-02 20:38:00'),
+(6, 2, 'Abadi', 4.175, '2020-11-02 20:38:00'),
+(7, 2, 'Cahaya Matahari', 4.34, '2020-11-02 20:43:00'),
+(8, 2, 'Harapan', 4.415, '2020-11-02 20:43:00'),
+(9, 2, 'Abadi', 4.175, '2020-11-02 20:43:00'),
+(10, 4, 'Cahaya Matahari', 4, '2020-11-02 21:01:00'),
+(11, 4, 'Harapan', 4.39, '2020-11-02 21:01:00'),
+(12, 4, 'Abadi', 4.435, '2020-11-02 21:01:00');
 
 -- --------------------------------------------------------
 
@@ -96,7 +125,10 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `email`, `username`, `pass`) VALUES
-(1, 'user', 'user@gmail.com', 'user', 'user');
+(1, 'user', 'user@gmail.com', 'user', 'user'),
+(2, 'maria', 'maria@gmail.com', 'maria', 'maria'),
+(3, 'user2', 'user2@gmail.com', 'user2', 'user2'),
+(4, 'puput', 'puput@gmail.com', 'puput', 'puput');
 
 -- --------------------------------------------------------
 
@@ -126,7 +158,10 @@ CREATE TABLE `nilai_mahasiswa` (
 --
 
 INSERT INTO `nilai_mahasiswa` (`id_nilai`, `id_mahasiswa`, `a1`, `a2`, `b1`, `b2`, `b3`, `b4`, `b5`, `c1`, `c2`, `d1`, `d2`, `d3`) VALUES
-(1, 1, 3, 5, 4, 5, 3, 4, 3, 5, 4, 3, 4, 3);
+(1, 1, 3, 5, 4, 5, 3, 4, 3, 5, 4, 3, 4, 3),
+(3, 2, 4, 5, 1, 4, 5, 3, 3, 4, 2, 2, 4, 3),
+(4, 3, 4, 4, 3, 3, 1, 5, 5, 3, 3, 4, 4, 5),
+(5, 4, 4, 4, 5, 5, 2, 5, 3, 4, 4, 3, 5, 5);
 
 --
 -- Indexes for dumped tables
@@ -137,6 +172,12 @@ INSERT INTO `nilai_mahasiswa` (`id_nilai`, `id_mahasiswa`, `a1`, `a2`, `b1`, `b2
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `hasilhitung`
+--
+ALTER TABLE `hasilhitung`
+  ADD PRIMARY KEY (`id_hasil`);
 
 --
 -- Indexes for table `instansi`
@@ -167,6 +208,12 @@ ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `hasilhitung`
+--
+ALTER TABLE `hasilhitung`
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `instansi`
 --
 ALTER TABLE `instansi`
@@ -176,13 +223,13 @@ ALTER TABLE `instansi`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `nilai_mahasiswa`
 --
 ALTER TABLE `nilai_mahasiswa`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
