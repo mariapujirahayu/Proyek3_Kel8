@@ -5,6 +5,7 @@
 
 <head>
     <?php include 'includes/head.php' ?>
+    <script src="../js/Chart.js"></script>
 </head>
 
 <body class="">
@@ -64,12 +65,19 @@
     <?php include 'includes/navbar.php' ?>
       <div class="content">
         <div class="row">
-        <div class="col-md-12">
+          <div class="col-md-12">
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title">Riwayat Perhitungan Mahasiswa</h4>
               </div>
               <div class="card-body">
+                <!-- <div class="card-header">
+                  <h5 class="card-title">NASDAQ: AAPL</h5>
+                  <p class="card-category">Line Chart with Points</p>
+                </div>
+                <div class="card-body">
+                  <canvas id="myChart" width="400" height="100"></canvas>
+                </div> -->
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">

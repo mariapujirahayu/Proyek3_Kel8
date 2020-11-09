@@ -156,7 +156,8 @@
                     $nama = $_FILES['foto']['name'];
                     $lokasi = $_FILES['foto']['tmp_name'];
                     move_uploaded_file($lokasi, "../foto_instansi/" . $nama);
-                    $koneksi->query("INSERT INTO instansi(nama_instansi,nomorhp,alamat,jobdesk,foto,ka1,ka2,kb1,kb2,kb3,kb4,kb5,kc1,kc2,kd1,kd2,kd3) VALUES('$_POST[nama]','$_POST[nomorhp]','$_POST[alamat]','$_POST[jobdesk]','$nama','$_POST[ka1]','$_POST[ka2]','$_POST[kb1]','$_POST[kb2]','$_POST[kb3]','$_POST[kb4]','$_POST[kb5]','$_POST[kc1]','$_POST[kc2]','$_POST[kd1]','$_POST[kd2]','$_POST[kd3]')");
+                    $koneksi->query("INSERT INTO instansi(nama_instansi,nomorhp,alamat,jobdesk,foto,ka1,ka2,kb1,kb2,kb3,kb4,kb5,kc1,kc2,kd1,kd2,kd3) 
+                      VALUES('$_POST[nama]','$_POST[nomorhp]','$_POST[alamat]','$_POST[jobdesk]','$nama','$_POST[ka1]','$_POST[ka2]','$_POST[kb1]','$_POST[kb2]','$_POST[kb3]','$_POST[kb4]','$_POST[kb5]','$_POST[kc1]','$_POST[kc2]','$_POST[kd1]','$_POST[kd2]','$_POST[kd3]')");
                     echo "<div class='alert alert-info'>Data Tersimpan</div>";
                     echo "<meta http-equiv='refresh' content='1;url=instansi.php'>";
                 }

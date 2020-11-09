@@ -25,10 +25,19 @@
 			<div class="row">
 				<div class="col-lg-3 sidebar">
 					<div class="sidebar-box bg-white ftco-animate">
-						<form action="#" class="search-form">
+						<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" class="search-form">
 							<div class="form-group">
+								<?php
+									$kata_kunci="";
+									if (isset($_POST['kata_kunci'])) {
+										$kata_kunci=$_POST['kata_kunci'];
+									}
+								?>
 								<span class="icon fa fa-search"></span>
-								<input type="text" class="form-control" placeholder="Search...">
+								<input type="text" name="kata_kunci" value="<?php echo $kata_kunci;?>" class="form-control" placeholder="Search...">
+							</div>
+							<div class="form-group">
+								<button type="submit" value="Pilih" name="submit" class="btn btn-warning"><i class="fa fa-search"></i> Cari</button>
 							</div>
 						</form>
 					</div>
@@ -48,7 +57,14 @@
 
 				<div class="col-lg-9">
 					<div class="row">
-						<?php $ambil = $koneksi->query("SELECT * FROM instansi ORDER BY id_instansi ASC"); ?>
+						<?php 
+							if (isset($_POST['kata_kunci'])) {
+								$kata_kunci=trim($_POST['kata_kunci']);
+								$ambil = $koneksi->query("SELECT * FROM instansi WHERE nama_instansi LIKE '%".$kata_kunci."%' OR alamat LIKE '%".$kata_kunci."%' ORDER BY id_instansi ASC"); 
+							}else {
+								$ambil = $koneksi->query("SELECT * FROM instansi ORDER BY id_instansi ASC"); 
+							} 
+						?>
         				<?php while ($pecah = $ambil->fetch_assoc()) { ?>
 						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
 							<div class="project-wrap">
@@ -69,8 +85,10 @@
 			</div>
 		</div>
 	</section>
+
 	<?php include 'includes/footer.php' ?>
 	<?php include 'includes/loader.php' ?>
-			
+
+	</script>
 </body>
 </html>
